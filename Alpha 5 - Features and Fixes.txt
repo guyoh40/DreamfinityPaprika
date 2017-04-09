@@ -1,0 +1,7 @@
+- Player Lucidity UI fix and functional
+- Enemy snapping to point in the level on start is fixed
+- Bug that would error when Piney Peter died is fixed
+- Adjusted time step back to .01
+- Adjusted particle effect for Double jump and Health pick up obj particle effect
+- Lucidity pickups on the ground will have a much longer lifespan than if they never collide 
+with anything in the level. (This stops lucidity that takes of into infinity from getting there but staying longer if they end up being stopped)
