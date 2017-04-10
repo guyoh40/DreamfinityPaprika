@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dreamfinity.Plugins", "Dreamfinity.Plugins.csproj", "{B684EF15-2098-E3D0-7776-EFE26614DD67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dreamfinity", "Dreamfinity.csproj", "{7911DF7F-871F-CF9D-A6EE-B820553E9C36}"
