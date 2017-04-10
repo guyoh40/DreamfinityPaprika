@@ -8,42 +8,71 @@ public class WellControl : MonoBehaviour {
 
     public LucidityControl m_resCont;
     public LucidityControl m_plrResCont;
-
-    public bool m_draining; // True when the well is being drained
-    GameObject m_castingObj;
-    public float distance;
-
-    GameObject playerRef;
-
     ParticleSystem m_DrainEffect;
+    public int rps;//"Return Per Second" when being drained
+    public bool m_draining; // True when the well is being drained
+    bool m_filling; // True when the well is being filled
 
-    void Start()
+    GameObject m_castingObj;
+
+    public void Start()
     {
+
         m_DrainEffect = GetComponent<ParticleSystem>();
         m_plrResCont = GameObject.FindWithTag("Player").GetComponent<LucidityControl>();
         m_resCont = GetComponent<LucidityControl>();
         m_DrainEffect.IsAlive();
-        m_castingObj = Resources.Load("pfb_RescourseCast") as GameObject;
-        playerRef = GameObject.FindWithTag("Player");
 
+        m_castingObj = Resources.Load("pfb_RescourseCast") as GameObject;
     }
 
-    void Update()
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.transform.tag == "Player")
+        {
+            if(Input.GetButtonDown("Drain") /*&& m_resCont.balance > 0*/)
+            {
+                Instantiate(m_castingObj, transform.position + Vector3.up, transform.rotation);
+                
+            }
+        }
+    }
+
+
+    public void Update()
     { 
         if(!m_draining)
         {
             m_DrainEffect.Stop();  
         }
-
-        Debug.Log(Vector3.Distance(transform.position, playerRef.transform.position));
-
-        if( Vector3.Distance(transform.position + Vector3.up, playerRef.transform.position) < distance && Input.GetButtonDown("Drain"))
+        else
         {
-            GameObject newLuc = Instantiate(m_castingObj, transform.position + Vector3.up, transform.rotation);
-            Vector3 lucDir = playerRef.transform.position - newLuc.transform.position; 
-            newLuc.GetComponent<Rigidbody>().velocity = lucDir;
+            Debug.Log("in!");
+            m_resCont.Withdraw(rps);
+            m_plrResCont.Deposit(rps);
         }
-
+        //transform.localScale = new Vector3(m_resCont.balance, m_resCont.balance, m_resCont.balance);
         m_draining = false;
+    }
+
+    public float GetRPS()
+    {
+        return rps;
+    }
+
+    public void DrainWell(Transform target)
+    {
+        if (m_resCont.balance > 0)
+        {
+            Quaternion direction = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
+            m_DrainEffect.Play();
+            m_DrainEffect.transform.rotation = direction;
+            m_draining = true;
+
+        }  
+        else
+        {
+            m_draining = false;
+        }
     }
 }

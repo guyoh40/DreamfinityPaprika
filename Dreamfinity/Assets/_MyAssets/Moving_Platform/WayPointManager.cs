@@ -1,14 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 
 
 
 [ExecuteInEditMode]
+=======
+using UnityEditor;
+
+[ExecuteInEditMode]
+
+
+
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
 public class WayPointManager : MonoBehaviour {
 
     public bool m_childRender;
 
+<<<<<<< HEAD
     void Start()
     {
         m_childRender = true;
@@ -18,6 +28,11 @@ public class WayPointManager : MonoBehaviour {
     public void RenderChilderen()
     {
 
+=======
+
+    public void RenderChilderen()
+    {
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
         if(!m_childRender)
         {
             transform.GetComponentInChildren<WaypointControl>().m_toggle = true;

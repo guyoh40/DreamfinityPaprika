@@ -11,14 +11,23 @@ namespace C_Utilities.C_Characters.C_ThirdPerson
         private v3rdPersonCamera m_camControl;   // A reference to the main camera in the scenes transform
         private Camera m_mainCam;
         private CharacterControler m_Character;
+
         private DrainLucidityAct m_DrainRescourse; 
+
         private SpendLucidityAct m_CastRescourse;
+
         private Transform m_Cam;
+
         private GameObject m_camObject;
+
         private Vector3 m_CamForward;    // The current forward direction of the camera
+
         private Vector3 m_Move;    // the world-relative desired move direction, calculated from the camForward and user input.
+
         private Vector2 m_MouseInput;    // Values 0 - 1 for mouse movement. 0 when the mouse is moving and 1 or -1 when the 
+
         private bool m_jump;    //Jumping or not
+
         private bool m_crouch; // Is the player Crouching?
         private bool m_drain, m_spend; // Booleans that are true when the player is draining or spending RES.
         private bool m_attack;
@@ -50,7 +59,8 @@ namespace C_Utilities.C_Characters.C_ThirdPerson
             m_lucJump = Input.GetButton("Jump");
             m_drain = Input.GetButton("Drain");
             m_attack = Input.GetButton("Attack");
-
+ 
+            m_DrainRescourse.RayDrain(m_drain);
             m_CastRescourse.Cast(m_spend);  
         }
 
@@ -59,6 +69,7 @@ namespace C_Utilities.C_Characters.C_ThirdPerson
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 
+            m_crouch = Input.GetButton("Crouch");
             Vector2 mouseAxis;
             mouseAxis = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 

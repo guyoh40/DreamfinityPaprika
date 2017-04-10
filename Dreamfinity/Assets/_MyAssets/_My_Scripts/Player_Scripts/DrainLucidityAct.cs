@@ -8,6 +8,10 @@ public class DrainLucidityAct : MonoBehaviour {
     public float m_harvestReach;
     LucidityControl m_rescourseControl;
 
+    
+
+
+
     private void Start() 
     {   
         m_Cam = GameObject.FindWithTag("MainCamera");
@@ -27,6 +31,7 @@ public class DrainLucidityAct : MonoBehaviour {
             {
                 if (hitInfo.collider.gameObject.tag == "Well")
                 {
+                    float _rps = hitInfo.collider.gameObject.GetComponent<WellControl>().GetRPS();
                     hitInfo.collider.gameObject.SendMessage("DrainWell", gameObject.transform);
                 }
             }

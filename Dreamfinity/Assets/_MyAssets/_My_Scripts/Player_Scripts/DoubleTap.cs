@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DoubleTap : MonoBehaviour {
@@ -9,6 +12,7 @@ public class DoubleTap : MonoBehaviour {
     KeyCode[] m_validInputList; //array of valid input button codes
 
     /*UI*/
+    Text DebugPannel;
     float m_DebugTextCoolDown;
 
     /*Examplle Script*/

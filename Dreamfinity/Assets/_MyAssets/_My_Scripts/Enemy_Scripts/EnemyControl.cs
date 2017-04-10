@@ -43,11 +43,13 @@ public class EnemyControl : MonoBehaviour {
             m_waypointParentObj = new GameObject();
         }
 
+
         if(m_enemyState == EnemyState.Idle)
         {
             m_guardPost = transform.position;
         }
 
+       
         m_currentWaypointIntex = 0;
 
         
@@ -55,12 +57,16 @@ public class EnemyControl : MonoBehaviour {
 
     private void Update()
     {
+        EnemyHitPointControl();
+
         EnemyStateMachine();
 
     }
 
     public void EnemyStateMachine()
     {
+
+        Debug.Log(m_navAgent.pathStatus);
 
         if(m_enemyState == EnemyState.Idle)
         {
@@ -116,4 +122,18 @@ public class EnemyControl : MonoBehaviour {
         }
     }
 
+   
+
+    private void EnemyHitPointControl()
+    {
+        if (enemyToughness < 0)
+        {
+            KnockOut();
+        }
+    }
+
+    public void KnockOut()
+    {
+      
+    }
 }

@@ -1,5 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+<<<<<<< HEAD
+=======
+using UnityEditor;
+
+[InitializeOnLoad]
+[ExecuteInEditMode]
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
 
 public class WaypointControl : MonoBehaviour {
 
@@ -32,6 +39,12 @@ public class WaypointControl : MonoBehaviour {
         m_lineRenderer = GetComponent<LineRenderer>();
         colTrigger = GetComponent<SphereCollider>();
 
+<<<<<<< HEAD
+=======
+        //allows this to run in the scene view instead of the game view
+        runInEditMode = true;
+
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
         m_editorInit = true;
     }
 
@@ -40,6 +53,7 @@ public class WaypointControl : MonoBehaviour {
         m_parentObject = transform.parent.gameObject;
         m_lineRenderer = GetComponent<LineRenderer>();
 
+<<<<<<< HEAD
         
         m_toggle = false;
     }
@@ -47,6 +61,16 @@ public class WaypointControl : MonoBehaviour {
 
     
 
+=======
+        //allows this to run in the scene view instead of the game view
+        runInEditMode = true;
+
+        m_toggle = true;
+    }
+    
+
+
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
     private void Update()
     {
         if(!m_editorInit)
@@ -54,6 +78,7 @@ public class WaypointControl : MonoBehaviour {
             EditorInit();
         }
 
+<<<<<<< HEAD
         if(Application.isPlaying)
         {
             m_toggle = false;
@@ -63,6 +88,9 @@ public class WaypointControl : MonoBehaviour {
             m_toggle = true;
         }
         
+=======
+        m_toggle = true;
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
 
         m_childCount = m_parentObject.transform.childCount;
 

@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
+=======
+using UnityEditor.AnimatedValues;
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
 using DG.Tweening;
 
 

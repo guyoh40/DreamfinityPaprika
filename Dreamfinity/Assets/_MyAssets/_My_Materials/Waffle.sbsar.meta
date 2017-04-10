@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: ee1b7839a053cb44a8e43cb050eb7545
+<<<<<<< HEAD
 timeCreated: 1491795123
+=======
+timeCreated: 1491623185
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -122,12 +126,21 @@ SubstanceImporter:
     - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 4156506206
+<<<<<<< HEAD
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 4156506179
     - shaderProp: _OcclusionMap
       material: {instanceID: 0}
       baseUID: 4156506184
+=======
+    - shaderProp: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 4156506184
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 4156506179
+>>>>>>> f86e85029d666cfb1c0332a0196ff61731d06bb1
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 

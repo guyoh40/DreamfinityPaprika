@@ -27,13 +27,13 @@ public class EnemyHealthManager : MonoBehaviour {
 
     private void Update()
     {
-        if(heathValue <= 0)
+        if(heathValue < 0)
         {
             Instantiate(lucObjRef, transform.position + Vector3.up, transform.rotation);
             Instantiate(lucObjRef, transform.position + Vector3.up, transform.rotation);
             Instantiate(lucObjRef, transform.position + Vector3.up, transform.rotation);
 
-            GameObject.Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
 
       

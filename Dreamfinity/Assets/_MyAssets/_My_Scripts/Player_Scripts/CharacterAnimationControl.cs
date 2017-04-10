@@ -29,7 +29,7 @@ namespace C_Animations
         {
             C_AttackState();
 
-            Movement = MovingCheck(Input.GetAxis("Horizontal") != 0, Input.GetAxis("Vertical") != 0);
+            Movement = MovingCheck(Input.GetButton("Horizontal"), Input.GetButton("Vertical"));
             c_animator.SetBool(MoveHash, Movement);
             c_animator.SetBool("IsGrounded", charContRef.m_isGrounded);
                  

@@ -22,6 +22,7 @@ public class SpendLucidityAct : MonoBehaviour
     {
         m_resourceControl = GetComponent<LucidityControl>();
         m_cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+
         m_castingObj = Resources.Load("pfb_RescourseCast") as GameObject;
     }
 
